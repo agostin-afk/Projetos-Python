@@ -12,7 +12,6 @@ def montarTabela():
 
 def exibir_blocos(tabela, tamanho=2):
     bloco = []
-    items = []
     for linha in range(0, len(tabela), tamanho):
         for coluna in range(0, len(tabela[0]), tamanho):
             aux = []
@@ -26,5 +25,14 @@ def exibir_blocos(tabela, tamanho=2):
             bloco.append(aux[:])
             print('-'*30)
     print(bloco)
+    return bloco
+def checagem_bloco(bloco):
+    bloco_repeticao = []
+    for x in range(0, 3):
+        tem_repetidos = len(bloco[x]) != len(set(bloco[x]))
+        if tem_repetidos:
+            bloco_repeticao.append(x+1)
+    return(bloco_repeticao)
 t = montarTabela()
-exibir_blocos(t)
+p = exibir_blocos(t)
+print(checagem_bloco(p))
