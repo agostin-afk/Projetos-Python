@@ -26,6 +26,22 @@ def exibir_blocos(tabela, tamanho=2):
             print('-'*30)
     print(bloco)
     return bloco
+def linhas_separadas(t):
+    linhas = []
+    for linha in range(0, len(t)):
+        aux = []
+        for coluna in range(0, len(t)):
+            aux.append(t[linha][coluna])
+        linhas.append(aux[:])
+    print(linhas)
+def colunas_separadas(t):
+    colunas = []
+    for coluna in range(0, len(t)):
+        aux = []
+        for linha in range(0, len(t)):
+            aux.append(t[linha][coluna])
+        colunas.append(aux[:])
+    print(colunas)
 def checagem_bloco(bloco):
     bloco_repeticao = []
     for x in range(0, 3):
@@ -36,3 +52,5 @@ def checagem_bloco(bloco):
 t = montarTabela()
 p = exibir_blocos(t)
 print(checagem_bloco(p))
+linhas_separadas(t)
+colunas_separadas(t)
