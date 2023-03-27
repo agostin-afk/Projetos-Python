@@ -50,7 +50,8 @@ def colunas_separadas(tabela):
 
 
 def conferir(blocos, linhas, colunas):
-    pass
+    numeros = [1,2,3,4,5,6,7,8,9]
+    
 
 
 tabela = montarTabela()
