@@ -50,17 +50,16 @@ def colunas_separadas(tabela):
 
 
 def conferir(blocos, linhas, colunas):
-    tabela_completa = [blocos[:], linhas[:], colunas[:]]
+    tabela_completa = [[],[]]
     while True:
         numeros = [1,2,3,4,5,6,7,8,9]
-        for i in range(len(blocos)):
-            for j in range(len(blocos)):
-                for num in range(len(numeros)):
-                    if blocos[i][j] == 0: 
-                        if numeros[num] not in blocos[i]:
-                            blocos[i][j] = numeros[num]
+        for i in range(len(linhas)):
+            for num in range(len(linhas)):
+                for j in range(len(colunas)):
+                    if numeros[num] not in linhas[i] and numeros not in colunas[j]:
+                        tabela_completa[i].append(numeros[num])
         break
-    return blocos
+    return tabela_completa
 
 
 tabela = montarTabela()
