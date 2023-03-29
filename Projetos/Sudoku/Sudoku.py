@@ -56,11 +56,16 @@ def conferir(blocos, linhas, colunas):
         for i in range(len(blocos)):
             for j in range(len(blocos)):
                 for num in range(len(numeros)):
-                    if numeros[num] == blocos[i][j]:
-                        
+                    if blocos[i][j] == 0: 
+                        if numeros[num] not in blocos[i]:
+                            blocos[i][j] = numeros[num]
+        break
+    return blocos
+
 
 tabela = montarTabela()
 blocos = blocos_separados(tabela)
 linhas = linhas_separadas(tabela)
 colunas = colunas_separadas(tabela)
-print(f'{tabela}\n{blocos}\n{linhas}\n{colunas}')
+teste = conferir(blocos, linhas, colunas)
+print(f'{tabela}\n{blocos}\n{linhas}\n{colunas}\n\n\n{teste}')
