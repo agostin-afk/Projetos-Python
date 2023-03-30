@@ -1,4 +1,4 @@
-def montarTabela():
+"""def montarTabela():
     dimensao = int(input('informe a dimensao da tabela: '))
     tabela = []
     for linha in range(dimensao):
@@ -67,4 +67,20 @@ blocos = blocos_separados(tabela)
 linhas = linhas_separadas(tabela)
 colunas = colunas_separadas(tabela)
 teste = conferir(blocos, linhas, colunas)
-print(f'{tabela}\n{blocos}\n{linhas}\n{colunas}\n\n\n{teste}')
+print(f'{tabela}\n{blocos}\n{linhas}\n{colunas}\n\n\n{teste}')"""
+def criar_tabela():
+    global x
+    try:
+        x = int(input('qual a dimensão da tabela ?[4/9]: '))
+        while True:
+            if x in [4,9]:
+                break
+            else:
+                x = int(input('por favor, escolha entre 4 e 9'))
+    except (ValueError, NameError, TypeError):
+        print('Erro de tipo, informe um valor inteiro')
+    except KeyboardInterrupt:
+        print('Sistema interrompido pelo usuario')
+    tabela = [[] for _ in range(x)]
+    return tabela
+
