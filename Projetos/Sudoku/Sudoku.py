@@ -83,4 +83,14 @@ def criar_tabela():
         print('Sistema interrompido pelo usuario')
     tabela = [[] for _ in range(x)]
     return tabela
-
+def preencher_tabela(tabela):
+    tamanho =  len(tabela)
+    for i in range(tamanho):
+        for j in range(tamanho):
+            num = int(input(f'Informe o valor da celula {i+1}x{j+1}: '))
+            tabela[i].append(num)
+    tabela_preenchida = tabela[:]
+    return tabela_preenchida
+teste = criar_tabela()
+p = preencher_tabela(teste)
+print(p)
