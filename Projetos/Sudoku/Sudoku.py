@@ -67,7 +67,10 @@ blocos = blocos_separados(tabela)
 linhas = linhas_separadas(tabela)
 colunas = colunas_separadas(tabela)
 teste = conferir(blocos, linhas, colunas)
-print(f'{tabela}\n{blocos}\n{linhas}\n{colunas}\n\n\n{teste}')"""
+print(f'{tabela}\n{blocos}\n{linhas}\n{colunas}\n\n\n{teste}')
+"""
+
+
 def criar_tabela():
     global x
     try:
