@@ -8,25 +8,25 @@ def make_pairs(corpus):
     for i in range(len(corpus)-1):
         yield (corpus[i], corpus[i+1])
         
-pairs = make_pairs(corpus)
+
+pares_palavras = make_pairs(corpus)
 
 
-word_dict = {}
-for word_1, word_2 in pairs:
-    if word_1 in word_dict.keys():
-        word_dict[word_1].append(word_2)
+dict_palavras = {}
+for palavra_1, palavra_2 in pares_palavras:
+    if palavra_1 in dict_palavras.keys():
+        dict_palavras[palavra_1].append(palavra_2)
     else:
-        word_dict[word_1] = [word_2]
+        dict_palavras[palavra_1] = [palavra_2]
      
-first_word = np.random.choice(corpus)
-chain = [first_word]
-n_words = 7
+primeira_palavra = np.random.choice(corpus)
+cadeia_palavras = [primeira_palavra]
+numero_palavras = 7
         
-for i in range(n_words):
-    if chain[-1] in word_dict:  # Verifique se a chave existe no dicionário
-        chain.append(np.random.choice(word_dict[chain[-1]]))
+for i in range(numero_palavras):
+    if cadeia_palavras[-1] in dict_palavras: 
+        cadeia_palavras.append(np.random.choice(dict_palavras[cadeia_palavras[-1]]))
     else:
-        break  # Se a chave não existir, pare o loop
-
-' '.join(chain)
-print(' '.join(chain))
+        break
+' '.join(cadeia_palavras)
+print(' '.join(cadeia_palavras))
