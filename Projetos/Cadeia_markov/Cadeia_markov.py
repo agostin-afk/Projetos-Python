@@ -1,9 +1,8 @@
 import numpy as np
 
 
-frases =open(r'A:\\agostinho\\codigos\\Projetos-Python\\Projetos\\Cadeia_markov\\palavras.txt',encoding='utf8').read()
+corpus =open(r'A:\\agostinho\\codigos\\Projetos-Python\\Projetos\\Cadeia_markov\\palavras.txt',encoding='utf8').read().split()
 
-corpus = frases.split()
 
 def make_pairs(corpus):
     for i in range(len(corpus)-1):
@@ -21,10 +20,13 @@ for word_1, word_2 in pairs:
      
 first_word = np.random.choice(corpus)
 chain = [first_word]
-n_words = 60
+n_words = 7
         
 for i in range(n_words):
-    chain.append(np.random.choice(word_dict[chain[-1]]))
-    
+    if chain[-1] in word_dict:  # Verifique se a chave existe no dicionário
+        chain.append(np.random.choice(word_dict[chain[-1]]))
+    else:
+        break  # Se a chave não existir, pare o loop
+
 ' '.join(chain)
 print(' '.join(chain))
