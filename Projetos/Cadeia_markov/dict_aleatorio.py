@@ -15,4 +15,5 @@ dici_dict = {
 }
 for k, i in dici_dict.items():
     print(f'{k} -> {list(i.keys())[0]} -> {int(list(i.values())[0])}')
+print(dici_dict)
     
